@@ -24,3 +24,14 @@ valor_unitario
 
 **Output:**
 total_vendas
+
+## Sobre os arquivos do projeto:
+
+**modelo_pytorch.py** é o arquivo de treinamento do modelo. 
+Nele está implementado todo o processo de construção do dataset, criação, treinamento, validação e gravação do modelo no disco. 
+
+**loadNetwork.py** é o módulo que irá carregar o modelo na memória durante a etapa de inferência.
+
+**app.py** é o código responsável pela criação da aplicação para deploy do modelo treinado com flask.
+
+**test.py** é o código de teste para realiza a inferência usando uma chamada request com python.
