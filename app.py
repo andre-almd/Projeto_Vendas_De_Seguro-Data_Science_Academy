@@ -16,7 +16,7 @@ import loadNetwork
 app = Flask(__name__)
 
 # Criando o objeto do meu modelo da rede neural
-model = app.loadNetwork.loadNet()
+model = loadNetwork.loadNet()
 model.load_state_dict(torch.load('modelos/modelo_Pytorch.pth'))
 model.eval()
 
