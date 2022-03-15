@@ -34,4 +34,4 @@ Nele está implementado todo o processo de construção do dataset, criação, t
 
 **app.py** é o código responsável pela criação da aplicação para deploy do modelo treinado com flask.
 
-**test.py** é o código de teste para realiza a inferência usando uma chamada request com python.
+**test.py** é o código de teste para realiza a inferência usando uma chamada request.
