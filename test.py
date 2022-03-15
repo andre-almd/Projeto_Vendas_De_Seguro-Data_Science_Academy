@@ -6,12 +6,12 @@ Created on Thu Mar 10 14:45:29 2022
 """
 
 '''
-# ------------------ Módulo para testar a execução do deploy com flask ------------------
+# ------------------ Module to test the deployment with flask ------------------
 '''
 
 import requests 
 
-# Dados de entrada
+# Input data
 media_aval_cliente = 2.5
 seguro_internacional = 1
 cobertura_dentaria = 0
@@ -22,7 +22,7 @@ capital_segurado = 0
 inclui_bonus = 0
 valor_unitario = 59.99
 
-# Enviando a requisição para a predição do total de vendas do seguro.
+# Sending the request for the prediction of total insurance sales.
 resp = requests.post("http://127.0.0.1:5000/predict", data={'data':[media_aval_cliente,
                                                                     seguro_internacional,
                                                                     cobertura_dentaria,
@@ -32,5 +32,6 @@ resp = requests.post("http://127.0.0.1:5000/predict", data={'data':[media_aval_c
                                                                     capital_segurado,
                                                                     inclui_bonus,
                                                                     valor_unitario]})
+prediction = resp.json()['Sales amount prediction']
 
-print(resp.text)
+print(f'The sales amount prediction is R${prediction:.6f}')

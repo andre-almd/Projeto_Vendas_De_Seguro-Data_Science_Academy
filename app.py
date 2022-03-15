@@ -12,47 +12,46 @@ from pickle import load
 
 import loadNetwork
 
-# Definindo o app conforme documentação Flask
+# Defining the app according to the Flask documentation
 app = Flask(__name__)
 
-# Criando o objeto do meu modelo da rede neural
+# Creating my neural network model object
 model = loadNetwork.loadNet()
 model.load_state_dict(torch.load('modelos/modelo_Pytorch.pth'))
 model.eval()
 
-# Carregando os scalers para transformação dos dados
+# Loading the scalers for data pre process
 X_scaler = load(open('X_scaler.pkl', 'rb'))
 Y_scaler = load(open('Y_scaler.pkl', 'rb'))
     
-# Função que realizará a predição 
+# Function to perform the prediction
 def get_prediction(inputs):
     
-    # Tranformação do dado de entrada com o scaler
-    inputs = X_scaler.transform(inputs)
-    # Transformação do input para tensor        
+    # Pre process
+    inputs = X_scaler.transform(inputs)        
     inputs = torch.from_numpy(inputs)
     
-    # Executando a predição        
+    # Make the prediction    
     with torch.no_grad():
         outputs = model(inputs)
-    # Tranformando o valor de y para a escala real  
+        
     outputs = Y_scaler.inverse_transform(outputs)
+    
     return outputs
 
 
-# Método de execução do app com flask
+# Run the app with flask
 @app.route('/predict', methods=['POST'])
 def predict():
     
     if request.method == 'POST':
-        # Definindo o dado de entrada do request
+        # Defining the request input data
         inputs = np.array(request.form.getlist('data'), dtype=np.float32).reshape(1,-1)
         try:
-            # Chamando a função que realiza a predição
             outputs = get_prediction(inputs)
             
-            # Return com valor da predição 
             return jsonify({'Sales amount prediction': outputs.item()})
+        
         except:
             return 'Erro durante a predição.'
 

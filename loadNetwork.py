@@ -12,12 +12,12 @@ Created on Thu Mar 10 15:36:40 2022
 import torch.nn as nn
 import torch.nn.functional as F
 
-# Classe do modelo
+# Model class
 class Net(nn.Module):
     def __init__(self, num_inputs, num_outputs, layer_1_nodes, layer_2_nodes, layer_3_nodes):
         super(Net, self).__init__()
         
-        # Camadas da rede
+        # layers
         self.fc1 = nn.Linear(num_inputs, layer_1_nodes)
         self.fc2 = nn.Linear(layer_1_nodes, layer_2_nodes)
         self.fc3 = nn.Linear(layer_2_nodes, layer_3_nodes)
@@ -36,16 +36,16 @@ class Net(nn.Module):
         x = self.fc4(x)
         return x
    
-# Definindo inputs e outputs
+# Inputs e outputs
 num_inputs = 9
 num_outputs = 1
 
-# Camadas
+# Layers
 layer_1_nodes = 50
 layer_2_nodes = 75
 layer_3_nodes = 15
 
-# Função para criar o objeto da rede
+# Function to create the network object
 def loadNet():
     net = Net(num_inputs=num_inputs, num_outputs=num_outputs, layer_1_nodes=layer_1_nodes,
               layer_2_nodes=layer_2_nodes, layer_3_nodes=layer_3_nodes)
