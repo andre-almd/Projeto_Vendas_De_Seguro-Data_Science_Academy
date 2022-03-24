@@ -1,4 +1,3 @@
-pip3 install torch torchvision torchaudio
 absl-py==1.0.0
 cachetools==5.0.0
 certifi==2021.10.8
