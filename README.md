@@ -41,3 +41,7 @@ Nele está implementado todo o processo de construção do dataset, criação, t
 ## Como usar a aplição?
 
 Excute o arquivo app.py para gerar a aplicação com flask e deixar o modelo disponível para inferência. Depois execute o arquivo test_streamlit.py para realizar as predições com a interface gráfica.
+
+## Imagem da interface
+
+![image](img/img_interface.png)
