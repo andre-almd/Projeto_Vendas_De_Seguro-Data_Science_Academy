@@ -35,3 +35,9 @@ Nele está implementado todo o processo de construção do dataset, criação, t
 **app.py** é o código responsável pela criação da aplicação para deploy do modelo treinado com flask.
 
 **test.py** é o código de teste para realiza a inferência usando uma chamada request.
+
+**test_streamlit.py** é o dódigo de teste com uma interface gráfica usando streamlit.
+
+## Como usar a aplição?
+
+Excute o arquivo app.py para gerar a aplicação com flask e deixar o modelo disponível para inferência. Depois execute o arquivo test_streamlit.py para realizar as predições com a interface gráfica.
