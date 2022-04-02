@@ -4,7 +4,7 @@ Código personalizado do Projeto de deploy no Curso Deep Learning II da Data Sci
 ## Sobre o desenvolvimento
 Neste repositório disponibilizo meu código personalizado para o projeto de previsão do **total de vendas de seguros de viagem** de uma empresa de seguros.
 
-Refiz o projeto da DSA usando Pytorch e uma aplicação Flask para o deploy do modelo treinado.
+Refiz o projeto da DSA usando Pytorch, aplicação Flask para o deploy do modelo treinado e interface gráfica usando streamlit.
 
 Durante o desenvolvimento foram utilizadas funcionalidades para criação de dataset personalizado no Pytorch, uso de tensorboard para registrar os modelos e métricas do Pytorch durante o processo de treino, modularização de código, salvamento do scaler do sklearn com dump, etc.
 
