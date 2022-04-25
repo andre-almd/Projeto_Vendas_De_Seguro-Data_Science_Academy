@@ -70,6 +70,6 @@ if make_pred:
                                                                     valor_unitario]})
     
     prediction = resp.json()['Sales amount prediction']
-    st.write(f'O total de vendas predito é: R${prediction:.2f}')
+    st.write(f'O total de vendas predito é: {prediction:.2f}')
 else:
     st.write('Aguardando predição...')
